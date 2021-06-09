@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+  <head>  
+    <script src="env.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="getAllLeads()">
+
+    <button type="button" class="add_lead_modal_btn" onclick="openForm()">Add Lead</button>
+
+    <div class="form-popup" id="myForm">
+      <form class="form_container" id="inputForm" action="javascript:;" onsubmit="formSubmit()">
+        <input class="form_input" type="text" placeholder="First Name" name="first_name" id="first_name" required>
+        <input class="form_input" type="text" placeholder="Last Name" name="last_name" id="last_name" required>
+        <input class="form_input" type="text" placeholder="Email Address" name="email" id="email" required>
+        <input class="form_input" type="text" placeholder="Mobile" name="mobile" id="mobile" required>
+        <select class="form_input" name="location_type" id="location_type" form="inputForm" required>
+          <option value="city">City</option>
+          <option value="country">Country</option>
+        </select>
+        <input class="form_input"  type="text" placeholder="Location String" name="location_string" id="location_string" required>
+
+        <button type="submit" class="add_lead_btn">Save</button>
+        <button type="button" class="close_btn" onclick="closeForm()">Close</button>
+      </form>      
+    </div>
+
+    <div class="form-popup" id="commForm">
+      <form class="form_container2" id="communicationForm" action="javascript:;" onsubmit="markUpdate()">
+         <input class="communication_form_input" type="text" placeholder="Communication" name="communication" id="communication" required>
+
+         <button type="submit" class="add_communication_btn">Save</button>
+         <button type="button" class="close_btn2" onclick="closeUpdate()">Close</button>
+      </form>
+    </div>
+
+    <div class="form-popup2" id="deleteForm">
+      <h3 class="deleteWindow-text">Are you sure you want to delete?</h3>
+      <button type="button" class="deleteBtn" onclick="deleteEntry()">Delete</button>
+      <button type="button" class="close_btn3" onclick="closeDelete()">Close</button>
+    </div>
+    
+    <table class="leads_table" id="main_table">
+      <tr>
+        <th class="name">Name</th>
+        <th class="email">Email</th>
+        <th class="mobile_number">Mobile number</th>
+        <th class="location_type">Location type</th>
+        <th class="location string">Location string</th>
+        <th class="action">Action</th>
+      </tr>      
+    </table>
+
+
+    
+
+    <div id="dynamic-content"></div>
+  </body>
+</html>
